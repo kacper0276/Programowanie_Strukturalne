@@ -22,7 +22,7 @@ void zad_1_2_3() {
 void zad_1_2_4() {
     int nazwa;
 
-    // %d - oznacza liczbê ca³kowit¹
+    // %d - oznacza liczbÄ™ caÅ‚kowitÄ…
     scanf("%d", &nazwa);
 
     printf("%d", nazwa);
@@ -72,7 +72,7 @@ void zad_1_2_7() {
     printf("%d \n", liczba+1);
 
 
-    printf("%d", liczba); // Nie zmienia wartoœci liczby
+    printf("%d", liczba); // Nie zmienia wartoÅ›ci liczby
 }
 
 void zad_1_2_8() {
@@ -81,13 +81,13 @@ void zad_1_2_8() {
     scanf("%d %d %d", &a, &b, &c);
 
     double srednia = (a + b + c) / 3.0f;
-    // Inaczej bêdzie wynik w int a nie w double, jak bêdzie samo 3, a nie 3.0f
+    // Inaczej bÄ™dzie wynik w int a nie w double, jak bÄ™dzie samo 3, a nie 3.0f
 
     printf("%lf\n", srednia);
 }
 
 void zad_1_2_9() {
-    // unsigned int - nie dzia³a w c
+    // unsigned int - nie dziaÅ‚a w c
     double a;
 
     scanf("%lf", &a);
@@ -106,8 +106,8 @@ void zad_1_2_10() {
     scanf("%lf", &a);
 
     double bezwzgledna = fabs(a);
-    // abs - dzia³a na int
-    // fabs - dzia³a na double
+    // abs - dziaÅ‚a na int
+    // fabs - dziaÅ‚a na double
 
     printf("%lf", bezwzgledna);
 }
@@ -130,7 +130,7 @@ void zad_1_2_12() {
 
     // %e - notacja naukowa
     // %c - znaki ASCII wyrzuci
-    // notacji wyk³adniczej - notacja naukowa  0.2 to 2.0e-1
+    // notacji wykÅ‚adniczej - notacja naukowa  0.2 to 2.0e-1
 }
 
 
