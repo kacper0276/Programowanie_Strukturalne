@@ -62,6 +62,11 @@ int main()
     printf("%p\n", wsk);
     wsk[0] = 1;
     wsk[1] = 5;
+   
+    int cos = 10;
+    int *wsk = &cos;
+    printf("%p\n", wsk); // zwraca wskaźnik w pamięci
+    printf("%d", *wsk); // zwraca wartość 10
 
     return 0;
 }
