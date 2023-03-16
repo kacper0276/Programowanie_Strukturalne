@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Funkcje do zadañ
+// Funkcje do zadaÃ±
 
 int fun_zad_3_2_1(int *a, int *b) {
     return (*a < *b) ? *a : *b;
@@ -41,7 +41,7 @@ void fun_zad_3_2_15(const int * stala, int *zmienna) {
     *zmienna = *stala;
 }
 
-// Lista zadañ
+// Lista zadaÃ±
 void zad_3_2_1() {
     int a = 11, b = 10;
 
