@@ -75,6 +75,28 @@ int main()
     
     int (*wsk_funkcja) (int a, int b) = suma;
     printf("suma: %d", wsk_funkcja(2,5));
+   
+   //Różnica
+   int a = 5, b = 10, c = 15;
+
+const int* foo;     // pointer to constant int.
+foo = &a;           // assignment to where foo points to.
+
+/* dummy statement*/
+*foo = 6;           // the value of a can´t get changed through the pointer.
+
+foo = &b;           // the pointer foo can be changed.
+
+
+
+int *const bar = &c;  // constant pointer to int 
+                      // note, you actually need to set the pointer 
+                      // here because you can't change it later ;)
+
+*bar = 16;            // the value of c can be changed through the pointer.    
+
+/* dummy statement*/
+bar = &a;             // not possible because bar is a constant pointer.
 
 
     return 0;
