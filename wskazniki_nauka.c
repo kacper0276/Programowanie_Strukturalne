@@ -68,5 +68,14 @@ int main()
     printf("%p\n", wsk); // zwraca wskaźnik w pamięci
     printf("%d", *wsk); // zwraca wartość 10
 
+   // Wskaźniki na funkcje
+   int suma(int a, int b) {
+    return a+b;
+}
+    
+    int (*wsk_funkcja) (int a, int b) = suma;
+    printf("suma: %d", wsk_funkcja(2,5));
+
+
     return 0;
 }
