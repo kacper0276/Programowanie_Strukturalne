@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-// Przekazywane aka pomocnicze funkcje do zadañ
+// Przekazywane aka pomocnicze funkcje do zadaÃ±
 double fun_3_2_13(int a) {
     return a;
 }
@@ -23,7 +23,7 @@ int fun_3_2(int n) {
     return n+10;
 }
 
-// G³ówne funkcje do zadañ
+// GÂ³Ã³wne funkcje do zadaÃ±
 
 double fun_zad_3_2_13(double (*fun_pom)(int argument), int x) {
     return fun_pom(x);
