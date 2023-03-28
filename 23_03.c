@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-// Przekazywane aka pomocnicze funkcje do zadañ
+// Przekazywane aka pomocnicze funkcje do zadan
 double fun_3_2_13(int a) {
     return a;
 }
@@ -23,7 +23,7 @@ int fun_3_2(int n) {
     return n+10;
 }
 
-// G³ówne funkcje do zadañ
+// G3ówne funkcje do zadan
 
 double fun_zad_3_2_13(double (*fun_pom)(int argument), int x) {
     return fun_pom(x);
@@ -49,9 +49,9 @@ unsigned int rek_zad_4(unsigned int n) {
     }
 
     switch(n%3) {
-        case 0: return n;
-        case 1: return n - 1;
-        case 2: return 3*n+1 - 1;
+        case 0: return rek_zad_4(n % 3);
+        case 1: return rek_zad_4(n % 3) + 1;
+        case 2: return rek_zad_4((n % 3) - 1) - 1;
     }
 
 
@@ -75,7 +75,17 @@ void zad_3() {
 }
 
 void zad_4() {
-    printf("%d", rek_zad_4(10));
+	printf("%u ", rek_zad_4(0)); // 1
+    printf("%u ", rek_zad_4(1)); // 1
+    printf("%u ", rek_zad_4(2)); // 0
+	printf("%u ", rek_zad_4(3)); // 1
+	printf("%u ", rek_zad_4(4)); // 2
+	printf("%u ", rek_zad_4(5)); // 1 
+	printf("%u ", rek_zad_4(6)); // 0 
+	printf("%u ", rek_zad_4(7)); // 1
+	printf("%u ", rek_zad_4(8)); // 0
+	printf("%u ", rek_zad_4(9)); // 1
+	printf("%u ", rek_zad_4(10)); // 2
 }
 
 void zad_5() {
