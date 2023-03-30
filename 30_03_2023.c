@@ -25,7 +25,7 @@ int abs(int n) {
     }
 }
 
-// Funkcje do zadañ
+// Funkcje do zadan
 double fun_zad_4_2_2a(int *tab, int rozmiar) {
     double suma = 0;
     for(int i = 0; i < rozmiar; i++) {
@@ -184,6 +184,32 @@ void fun_zad_4_2_12c(int n, int *tab) {
 
 }
 
+void fun_zad_4_2_12d(int n, int *tab) {
+	for(int i = 0; i < n; i++) {
+		for(int j = i + 1; j < n; j++) {
+			if(tab[i] >= tab[j]) {
+				int pom = tab[i];
+				tab[i] = tab[j];
+				tab[j] = pom;
+			}
+		}
+	}
+}
+
+void fun_zad_4_2_12e(int n, int *tab) {
+	for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < n; j++) {
+            if(tab[i] >= tab[j]) {
+                continue;
+            } else {
+                int pom  = tab[i];
+                tab[i] = tab[j];
+                tab[j] = pom;
+            }
+        }
+    }
+}
+
 // Zadania
 
 void zad_4_2_2() {
@@ -283,6 +309,23 @@ void zad_4_2_12() {
     for(int i = 0; i < SIZE; i++) {
         printf("%d ", tablica[i]);
     }
+    
+    printf(" \n");
+    
+    // Podpunkt d
+    fun_zad_4_2_12d(SIZE, tablica);
+    for(int i = 0; i < SIZE; i++) {
+        printf("%d ", tablica[i]);
+    }
+    
+    printf("\n");
+    
+    // Podpunkt e
+    fun_zad_4_2_12e(SIZE, tablica);
+    for(int i = 0; i < SIZE; i++) {
+        printf("%d ", tablica[i]);
+    }
+    
 }
 
 
@@ -293,7 +336,7 @@ int main()
     // zad_4_2_6();
     // zad_4_2_9();
     // zad_4_2_10();
-    zad_4_2_12();
+    // zad_4_2_12();
 
     return 0;
 }
