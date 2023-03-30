@@ -25,7 +25,7 @@ int abs(int n) {
     }
 }
 
-// Funkcje do zadañ
+// Funkcje do zadaÃ±
 double fun_zad_4_2_2a(int *tab, int rozmiar) {
     double suma = 0;
     for(int i = 0; i < rozmiar; i++) {
