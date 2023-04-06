@@ -100,4 +100,10 @@ bar = &a;             // not possible because bar is a constant pointer.
 
 
     return 0;
+   
+    int liczba =5;
+    int* wsk =&liczba;
+    printf("Adres zmiennej: %p\n", wsk ); // adres pamięci
+    printf("Adres zmiennej przechowujacej wsk.: %p\n",&wsk ); // adres pamięci
+    printf("Wyluskiwanie wskaznika: %d\n",*wsk); // 5
 }
