@@ -109,11 +109,11 @@ int fun_zad_4_2_10b(int n, int *tab) {
 }
 
 int fun_zad_4_2_10c(int n, int *tab) {
-    int index = 0, max = 0;
+    int index = 0;
 
     for(int i = 0; i < n; i++) {
-        if(tab[i] > max) {
-            max = tab[i];
+        if(tab[i] > tab[index]) {
+           // ważne, trzymanie min czy max value to ujemne punkty na kolokwium
             index = i;
         }
     }
@@ -122,11 +122,11 @@ int fun_zad_4_2_10c(int n, int *tab) {
 }
 
 int fun_zad_4_2_10d(int n, int *tab) {
-    int index = 0, min = 100000;
+    int index = 0;
 
     for(int i = 0; i < n; i++) {
-        if(tab[i] < min) {
-            min = tab[i];
+        if(tab[i] < tab[index]) {
+            // ważne, trzymanie min czy max value to ujemne punkty na kolokwium
             index = i;
         }
     }
@@ -146,10 +146,9 @@ int fun_zad_4_2_10e(int n, int *tab) {
 }
 
 int fun_zad_4_2_10f(int n, int *tab) {
-    int max = 0, index = 0;
+    int index = 0;
     for(int i = 0; i < n; i++) {
-        if(abs(tab[i]) > max) {
-            max = abs(tab[i]);
+        if(abs(tab[i]) > abs(tab[index])) {
             index = i;
         }
     }
