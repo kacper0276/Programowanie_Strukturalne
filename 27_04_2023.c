@@ -7,7 +7,7 @@ void zad(char *a) {
     printf("%s", a);
 }
 
-// Funkcje do zadañ
+// Funkcje do zadan
 int dlugosc(char *napis) {
     int i = 0;
     while(napis[i] != 0) {
@@ -63,19 +63,58 @@ void sklej(char *n1, char *n2, char *n3) {
 
 }
 
-void wytnij(char *napis, int n, int m) { // Dokoñcz
+void wytnij(char *napis, int n, int m) { // Dokoncz
     int i = 0;
+    int j = 0;
     while(napis[i] != 0) {
-        if(i >= n && i <= m) {
-            napis[n + i] = napis[i + m + 1];
-        }
+        if(i == n) {
+        	int pom = 0;
+        	while(n + pom <= m) {
+        		napis[n + pom] = napis[m + pom + 1];
+        		pom++;
+			}
+				i = m;
+//				if(napis[m + pom + 1] == napis[0]) {
+//					napis[i + 1] = 0;
+//				}
+		}
         i++;
     }
     napis[i] = 0;
 }
 
 void wytnijzw(char *n1, char *n2) {
-    int i = 0;
+    int i = 0, j = 0;
+    char ile[256] = {};
+    
+    zliczWystapienia(ile, n2);
+    
+//    for(int i = 0; i < 255; i++) {
+//    	if(ile[i] != 0) {
+//    		printf("%c: %d ", i, ile[i]);
+//		}
+//	}
+    
+    while(n1[i] != 0) {
+    	if(ile[n1[i]] == 0) {
+    		if(j < i) {
+    			n1[j] = n1[i];
+			}
+			j++;
+		}
+		i++;
+		n1[j] = 0;
+	}
+    
+}
+
+void zliczWystapienia(char *ile, char *napis) {
+	int i = 0;
+	
+	while(napis[i] != 0) {
+		ile[napis[i]]++;
+		i++;
+	}
 }
 
 // Zadania
@@ -95,19 +134,9 @@ void zad_5_2_6() {
     kopiujn(n1, n2, 2);
     kopiujnwchar(z1, z2, 4);
 
-    int i = 0;
-    while(n2[i] != 0) {
-        printf("%c", n2[i]);
-        i++;
-    }
-
-    printf("\n");
-
-    int iwchar = 0;
-    while(z2[iwchar] != 0) {
-        printf("%c", z2[iwchar]);
-        iwchar++;
-    }
+    printf("%s \n", n2);
+    
+    printf("%s", z2);
 
 }
 
@@ -125,19 +154,24 @@ void zad_5_2_7() {
 }
 
 void zad_5_2_9() {
-    char n1[] = "napis";
+    char n1[] = "testcos";
 
-    wytnij(n1, 1, 4);
+    wytnij(n1, 0, 3);
 
-    int index = 0;
-    while(n1[index] != 0) {
-        printf("%c", n1[index]);
-        index++;
-    }
+    printf("%s", n1);
 }
 
 void zad_5_2_11() {
+	char n1[] = "abcdefg";
+	char n2[] = "aaggbgggkldggmgn";
+	
+	wytnijzw(n1, n2);
+	
+	printf("%s", n1);
+}
 
+void zad_5_2_20() {
+	
 }
 
 int main()
@@ -145,8 +179,9 @@ int main()
     // zad_5_2_2();
     // zad_5_2_6();
     // zad_5_2_7();
-    // zad_5_2_9();
-    zad_5_2_11();
+	zad_5_2_9(); // Dopisz dla wchar_t
+	// zad_5_2_11(); Dopisz dla wchar_t
+	// zad_5_2_20();
 
     return 0;
 }
