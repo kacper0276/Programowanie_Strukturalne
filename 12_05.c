@@ -22,6 +22,10 @@ int fun_zad_7_2_1(struct trojkat t) {
 
 // Zad 7.2.2
 
+void fun_zad_7_2_2(struct trojkat troj1, struct trojkat *troj2) {
+    *troj2 = troj1;
+}
+
 void zad_7_2_2() {
     struct trojkat t1 = {10, 15, 20};
     struct trojkat t2;
@@ -31,13 +35,7 @@ void zad_7_2_2() {
     printf("%d %d %d", t2.bokA,  t2.bokB, t2.bokC);
 }
 
-void fun_zad_7_2_2(struct trojkat troj1, struct trojkat *troj2) {
-    *troj2 = troj1;
-}
-
 // Zad 7.2.3
-
-
 
 struct punkt {
     double x;
@@ -46,11 +44,11 @@ struct punkt {
 };
 
 double min(struct punkt tab[], int n) {
-    double pom, min = fabs(tab[1].x - tab[0].x) + fabs(tab[1].y - tab[0].y) + fabs(tab[1].z - tab[0].z);
+    double pom, min = sqrt(pow(tab[1].x - tab[0].x,2) + pow(tab[1].y - tab[0].y,2) + pow(tab[1].z - tab[0].z,2));
 
     for(int i = 0; i < n; i++) {
         for(int j = i + 1; j < n; j++) {
-            pom = fabs(tab[j].x - tab[i].x) + fabs(tab[j].y - tab[i].y) + fabs(tab[j].z - tab[i].z);
+            pom = sqrt(pow(tab[j].x - tab[i].x, 2) + pow(tab[j].y - tab[i].y, 2) + pow(tab[j].z - tab[i].z, 2));
             if(pom < min) {
                 min = pom;
             }
@@ -60,10 +58,10 @@ double min(struct punkt tab[], int n) {
     return min;
 }
 
-void zad_7_2_3() { // Doko�cz
+void zad_7_2_3() {
     struct punkt tab[] = {{1.5, 2.2, 3.3}, {1.5, 5.1, 10.1}};
 
-    printf("%lf", min(tab, 2));
+    printf("%.2lf", min(tab, 2));
 }
 
 // Zad 7.2.4
@@ -144,17 +142,52 @@ union super_int {
 };
 
 // Zad 7.2.11
+union Liczba {
+	int calkowita;
+	double wymierna;
+};
 
+struct Dane {
+	int tp;
+	union Liczba zaw;
+};
+
+struct Dane funkcja() {
+	struct Dane r;
+	printf("Jaka liczbe wczytujemy? \n");
+	printf("0 <- liczba całkowita 1 <- liczba wymierna \n");
+	scanf("%d", &r.tp);
+	
+	if(r.tp == 0) {
+		scanf("%d", &r.zaw.calkowita);	
+	} else if(r.tp == 1) {
+		scanf("%lf", &r.zaw.wymierna);
+	} else {
+		printf("Zła liczba");
+	}
+	
+	return r;
+}
+
+void zad_7_2_11() {
+	funkcja();
+}
+
+// Zad 7.2.15
+enum zwierzak {
+	pies, kot, ryba, papuga
+};
 
 
 int main()
 {
     // zad_7_2_1();
     // zad_7_2_2();
-    // zad_7_2_3();
+    zad_7_2_3();
     // zad_7_2_4();
     // zad_7_2_5();
     // zad_7_2_7();
+	// zad_7_2_11();
 
     return 0;
 }
