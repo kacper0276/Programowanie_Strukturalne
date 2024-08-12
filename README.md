@@ -21,12 +21,12 @@ To set up the project locally:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/kacper0276/Programowanie_Strukturalne.git
+    git clone https://github.com/kacper0276/Structural_Programming.git
     ```
 
 2. **Navigate to the project directory**:
     ```bash
-    cd Programowanie_Strukturalne
+    cd Structural_Programming
     ```
 
 3. **Compile the C code**:
